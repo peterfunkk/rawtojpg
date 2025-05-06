@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://localhost:3000/upload" method="POST" enctype="multipart/form-data">
+        <label for="imagenes">Selecciona hasta 200 imágenes (RAW):</label>
+        <input type="file" name="imagenes" id="imagenes" multiple accept=".cr2,.nef,.raw,.dng">
+        <br><br>
+        <button type="submit">Subir Archivos</button>
+      </form>
+</html>

@@ -1,0 +1,33 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs
+*.log
+*.log.*
+
+# Env
+.env
+
+# Prisma (si lo usás)
+prisma/dev.db
+prisma/migrations/
+
+# SQLite (si usás Sequelize o sin Prisma)
+*.sqlite
+*.sqlite3
+data.db
+
+# Multer / uploads
+uploads/
+converted/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
