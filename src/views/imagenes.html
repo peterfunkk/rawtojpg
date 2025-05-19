@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Imágenes Convertidas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+
+  <h1 class="mb-4">Galería de Imágenes Convertidas</h1>
+  <div id="galeria" class="row"></div>
+
+  <script>
+    async function cargarImagenes() {
+      const res = await fetch('/api/imagenes');
+      const imagenes = await res.json();
+
+      const galeria = document.getElementById('galeria');
+      galeria.innerHTML = '';
+
+      imagenes.forEach(img => {
+        const col = document.createElement('div');
+        col.className = 'col-md-4 mb-4';
+
+        col.innerHTML = `
+          <div class="card">
+            <img src="/converted/${img.convertido}" class="card-img-top" alt="Imagen convertida">
+            <div class="card-body">
+              <h5 class="card-title">${img.original}</h5>
+              <a href="/converted/${img.convertido}" download class="btn btn-success">Descargar</a>
+            </div>
+          </div>
+        `;
+
+        galeria.appendChild(col);
+      });
+    }
+
+    cargarImagenes();
+  </script>
+</body>
+</html>
