@@ -18,7 +18,7 @@ exports.subirYConvertir = async (req, res) => {
     });
 
     // Hacemos POST a Flask para la conversión, recibimos stream ZIP
-    const flaskRes = await axios.post('http://localhost:5000/convert', form, {
+    const flaskRes = await axios.post('https://rawtojpg-python-production.up.railway.app/convert', form, {
       headers: form.getHeaders(),
       responseType: 'stream',
     });
