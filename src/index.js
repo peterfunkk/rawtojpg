@@ -10,7 +10,8 @@ const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI;
 
 const { exec } = require('child_process');
-
+app.use(express.json({ limit: '100mb' }));
+app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 
 // Conexión a la base de datos
 mongoose.connect('mongodb://localhost:27017/rawtojpg', {
