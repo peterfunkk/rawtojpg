@@ -33,8 +33,7 @@
           method: 'POST',
           body: formData,
         });
-
-        if (!res.ok) throw new Error('Error en la conversión');
+        if (!res.ok) throw new Error(`Error ${res.status}`);
 
         // Recibimos un blob (el ZIP)
         const blob = await res.blob();
